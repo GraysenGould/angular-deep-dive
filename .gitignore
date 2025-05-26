@@ -38,3 +38,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#code workspace
+angular-deep-dive.code-workspace
