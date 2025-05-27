@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {COURSES} from '../db-data';
+import {COURSES, findCourseById} from '../db-data';
 import {CourseCardComponent} from './course-card/course-card.component';
 
 
@@ -10,7 +10,9 @@ import {CourseCardComponent} from './course-card/course-card.component';
     standalone: false
 })
 export class AppComponent {
-
+    coreCourse = COURSES[0];
+    rxjsCourse = COURSES[1];
+    ngrxCourse = COURSES[2];
 
 
 }
