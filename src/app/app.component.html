@@ -8,9 +8,21 @@
 
 <div class="courses">
 
-<course-card (courseSelected)="onCourseSelected($event)" [course]="coreCourse"> </course-card>
-<course-card (courseSelected)="onCourseSelected($event)" [course]="rxjsCourse"> </course-card>
-<course-card (courseSelected)="onCourseSelected($event)" [course]="ngrxCourse"> </course-card> 
+    @for (course of courses; track course.id; let index = $index; let count =$count;
+    let first = $first; let last = $last; let even = $even; let odd = $odd;) {
+        
+        <course-card 
+        (courseSelected)="onCourseSelected($event)" 
+        [course]="course"
+        [class.is-first]="first"
+        [class.is-last]="last"
+        [class.is-odd]="even"
+        [class.is-odd]="odd"
+        [index]="index"/>
+    }
+    @empty {
+        <h1>No Courses Found</h1>
+    }
 
 
 </div>
