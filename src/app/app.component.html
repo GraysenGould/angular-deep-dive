@@ -1,40 +1,25 @@
 <div class="top-menu">
-
     <img class="logo"
          src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
-
 </div>
  
-<div class="demo">
-    <!-- <div>{{startDate | date: 'MMM/dd/yyyy'}}</div> -->
-    <!-- <div>{{title | titlecase}} </div> -->
-    <!-- <div>{{price | number : '3.3-5'}}</div> -->
-    <!-- <div>{{price | currency: 'EUR'}}</div>  -->
-
-    <!-- <div> Percentage: {{rate | percent }}</div>  -->
-     <!-- {{ courses| json}} -->
-</div>
-
-<div *ngFor="let pair of courses |keyvalue">
-    {{pair.key + " " + pair.value | json}}
-</div>
 
 <div class="courses">
 
-    @for (course of courses | slice: 0: 2; track course.id; let index = $index; let count =$count;
+    <!-- @for (course of courses; track course.id; let index = $index; let count =$count;
     let first = $first; let last = $last; let even = $even; let odd = $odd;) {
         
         <course-card 
         (courseSelected)="onCourseSelected($event)" 
         [course]="course"
-        [class.is-first]="first"
-        [class.is-last]="last"
         [index]="index"/>
-    }
-    @empty {
-        <h1>No Courses Found</h1>
-    }
+    } -->
 
+    <course-card 
+        *ngFor="let course of courses; index as i;"
+        (courseSelected)="onCourseSelected($event)"
+            [course]="course" [cardIndex]="i + 1">
+    </course-card>
 
 </div>
 

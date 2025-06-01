@@ -13,7 +13,7 @@ export class CourseCardComponent implements OnInit {
     course: Course;
 
     @Input({required: true})
-    index: number;
+    cardIndex: number;
 
     @Output()
     courseSelected = new EventEmitter<Course>();
@@ -22,6 +22,10 @@ export class CourseCardComponent implements OnInit {
     }
 
     ngOnInit () {
+    }
+
+    isImageVisible() {
+      return this.course && this.course.iconUrl;
     }
 
     onCourseViewed() {
