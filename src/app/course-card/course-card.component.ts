@@ -12,7 +12,7 @@ export class CourseCardComponent implements OnInit {
     @Input()
     course: Course;
 
-    @Input({required: true})
+    //@Input({required: true})
     cardIndex: number;
 
     @Output()
