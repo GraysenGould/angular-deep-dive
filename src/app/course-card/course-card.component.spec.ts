@@ -20,4 +20,4 @@ describe('CourseCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+}) ;

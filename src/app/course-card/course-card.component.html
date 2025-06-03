@@ -2,19 +2,14 @@
 <div class="course-card">
 
     <div class="course-title">
-      {{ (cardIndex || '' ) + " " + course.description}}
+      {{ course.description }}
     </div>
-    <img #courseImage width="300" alt="Angular Logo"
-    *ngIf="isImageVisible(); else noImage"
-    [src]="course.iconUrl">
 
-    <ng-template #noImage>
-        <p>No Image is Available</p>
-    </ng-template>
+    <ng-content select=".course-image"></ng-content>
 
-    <div class="course-description">
-        {{course.longDescription}}
-    </div>
+    <ng-content select=".course-description"></ng-content>
+
+    <ng-content></ng-content>
 
     <div class="course-category">
       @switch (course.category) {
