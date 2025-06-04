@@ -24,7 +24,7 @@ export class AppComponent implements AfterViewInit{
         //     cards => console.log(cards)
         // );
         // console.log("cards:", this.cards.first);
-        console.log(this.cards);
+        //console.log(this.cards);
         
         
     }
